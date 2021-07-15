@@ -1,0 +1,169 @@
+$contrast-color: #7C83FD;
+
+@mixin component_center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header.navbar {
+  width: 100%;
+  height: 15vh;
+  font-size: 1.15rem;
+  padding: 0 2%;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+
+  nav.navbar__menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+header.navbar .navbar {
+  &__logo, &__categories, &__create_course, &__my_courses, &__account, &__searchbar, &__cart, &__login_register {
+    @include component_center;
+    height: 100%;
+    text-align: center;
+    transition: 0.1s;
+  }
+
+  &__logo, &__categories, &__create_course, &__my_courses, &__account {
+    flex-basis: 10%;
+  }
+
+  &__logo img {
+    width: 75px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+  }
+
+  &__searchbar {
+    flex-grow: 1;
+  }
+
+  &__categories {
+    position: relative;
+    cursor: default;
+    transition: 0.1s;
+  }
+
+  &__create_course, &__my_courses {
+    padding: 0 10px;
+  }
+
+  &__cart {
+    flex-basis: 5%;
+    font-size: 1.75rem;
+  }
+
+  &__login_register {
+    flex-basis: 20%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+}
+
+header.navbar .navbar {
+  &__categories span:hover, &__cart:hover, &__create_course:hover, &__my_courses:hover {
+    color: $contrast-color;
+  }
+
+  &__categories:hover .categories__content {
+    display: block;
+  }
+}
+
+.navbar__categories .categories__content {
+  display: none;
+  position: absolute;
+  top: 15vh;
+  left: 0;
+  right: auto;
+  z-index: 1;
+  padding: 10px 15px;
+  min-width: 250px;
+  background-color: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+
+  nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    li {
+      text-align: left;
+      padding: 10px 0;
+    }
+  }
+}
+
+.navbar__category {
+  display: flex;
+  transition: 0.1s;
+  & .category__name {
+    flex-grow: 1;
+  }
+  & svg {
+    flex-basis: 10%;
+  }
+}
+
+.navbar__category:hover {
+  color: $contrast-color;
+}
+
+.navbar__searchbar form {
+  width: 100%;
+}
+
+.navbar__searchbar form .searchbar__input__wrapper {
+  @include component_center;
+  padding: 5px 0;
+  background-color: #fff;
+  border: 1px solid black;
+  border-radius: .25rem;
+  width: 100%;
+
+  & input {
+    flex-grow: 1;
+    border: none;
+    box-shadow: 0 0 0 0 white;
+    font-size: 1rem;
+    font-weight: 300;
+  }
+
+  & button[type=submit] {
+    flex-basis: 10%;
+    height: 100%;
+    display: block;
+    border: none;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    background-color: #fff;
+  }
+}
+
+.navbar {
+  &__login, &__register {
+    padding: 2% 8%;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  &__register {
+    background-color: black;
+    color: white;
+  }
+
+  &__login {
+    border: 1px solid black;
+  }
+
+  & .active {
+    border-bottom: 3px solid black;
+  }
+}

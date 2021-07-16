@@ -1,0 +1,17 @@
+@import "../variables";
+
+.navbar__category {
+  display: flex;
+  align-items: center;
+  transition: 0.1s;
+  & .category__name {
+    flex-grow: 1;
+  }
+  & svg {
+    flex-basis: 10%;
+  }
+}
+
+.navbar__category:hover {
+  color: $contrast-color;
+}

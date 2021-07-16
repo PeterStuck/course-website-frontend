@@ -1,0 +1,8 @@
+header.navbar .navbar {
+  &__logo img {
+    width: 75px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+  }
+}

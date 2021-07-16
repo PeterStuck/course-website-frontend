@@ -1,0 +1,30 @@
+@import "src/styles/variables";
+
+.navbar__categories .categories__content {
+  display: none;
+  position: absolute;
+  top: 15vh;
+  left: 0;
+  right: auto;
+  z-index: 1;
+  padding: 10px 15px;
+  min-width: 250px;
+  background-color: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+
+  nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    li {
+      text-align: left;
+      padding: 10px 0;
+    }
+  }
+}
+
+header.navbar .navbar {
+  &__categories:hover .categories__content {
+    display: block;
+  }
+}

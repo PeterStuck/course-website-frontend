@@ -14,7 +14,6 @@ const App = () => {
             <Route
                 component={CoursesMainSection}
                 path={urls.COURSE_CATEGORY_PAGE.path + ":categoryId"}
-                sectionClass="section--margin"
             />
           </Switch>
         </Router>

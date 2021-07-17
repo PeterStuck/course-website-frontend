@@ -1,0 +1,47 @@
+@import "../../variables";
+
+div.section__wrapper .sidebar_filter_options {
+  grid-column: 1;
+  grid-row: 1;
+  margin-top: 20%;
+
+  & .paid__options {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+div.section__wrapper .sidebar_filter_options .paid__options {
+  & .paid__option {
+    flex-basis: 100%;
+
+    & .MuiFormControlLabel-label {
+      font-size: .85rem;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    & span {
+      color: black;
+    }
+  }
+}
+
+.sidebar__option .option__body {
+  & ul.option__subcategories {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  & ul.option__subcategories .option__subcategory {
+    display: block;
+    padding: 5px;
+    margin: 5px 0;
+    transition: 0.4s;
+  }
+
+  & ul.option__subcategories .option__subcategory:hover {
+    color: $contrast-color;
+  }
+}

@@ -1,0 +1,13 @@
+.sidebar_filter_options .sidebar__option {
+  margin: 5px 0;
+
+  & .option__title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+  }
+
+  & .option__body {
+    font-size: 0.85rem;
+    font-family: 'Poppins', sans-serif;
+  }
+}

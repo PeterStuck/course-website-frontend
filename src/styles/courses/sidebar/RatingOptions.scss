@@ -1,0 +1,11 @@
+.sidebar_filter_options .ratings__fieldset {
+  width: 100%;
+
+  & .rating__field .MuiIconButton-label {
+    color: black;
+  }
+
+  & .rating__field .MuiFormControlLabel-label {
+    width: 100%;
+  }
+}

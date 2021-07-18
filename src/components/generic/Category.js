@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 
-import {urls} from "../../../urls";
+import {urls} from "../../urls";
 
 const Category = ({category, categoryClass}) => {
     const {id, name} = category;

@@ -1,21 +1,21 @@
 import React, {useEffect, useState} from 'react';
 import {useParams} from "react-router-dom";
-import {Checkbox, FormControlLabel} from "@material-ui/core";
 
 import RatingOptions from "./RatingOptions";
 import SidebarOption from "./SidebarOption";
-import CategoriesList from "./CategoriesList";
+import CategoriesList from "../../generic/CategoriesList";
+import PaidOptions from "./PaidOptions";
 
+import {defaultState, SidebarContext} from "./SidebarContext";
 import {CATEGORY_RESOURCE_URLS} from "../../../resources";
 import '../../../styles/courses/sidebar/Sidebar.scss';
-
 
 
 const Sidebar = () => {
     const [subcategories, setSubcategories] = useState([]);
     const [ratingFilter, setRatingFilter] = useState();
-    const [isFree, setIsFree] = useState(false);
-    const [isPaid, setIsPaid] = useState(false);
+    const [isFree, setIsFree] = useState(defaultState.isFree);
+    const [isPaid, setIsPaid] = useState(defaultState.isPaid);
 
     const {categoryId} = useParams();
 
@@ -52,38 +52,32 @@ const Sidebar = () => {
 
     const handleChangeRatingFilter = (e) => setRatingFilter(e.target.value);
 
-    const handleChangeIsFreeFilter = () => setIsFree(!isFree);
+    const handleChangeIsFree = () => setIsFree(!isFree);
 
-    const handleChangeIsPaidFilter = () => setIsPaid(!isPaid);
+    const handleChangeIsPaid = () => setIsPaid(!isPaid);
 
     return (
         <div className="sidebar_filter_options">
+            <SidebarContext.Provider value={{
+                isFree,
+                handleChangeIsFree,
+                isPaid,
+                handleChangeIsPaid
+            }}>
+                <SidebarOption optionTitle={"Subcategory"}>
+                    {subcategoryComponent}
+                </SidebarOption>
 
-            <SidebarOption optionTitle={"Subcategory"}>
-                {subcategoryComponent}
-            </SidebarOption>
+                <SidebarOption optionTitle={"Ratings"}>
+                    <RatingOptions
+                        selectedRatingFilter={ratingFilter}
+                        changeRatingFilterHandler={handleChangeRatingFilter} />
+                </SidebarOption>
 
-            <SidebarOption optionTitle={"Ratings"}>
-                <RatingOptions
-                    selectedRatingFilter={ratingFilter}
-                    changeRatingFilterHandler={handleChangeRatingFilter} />
-            </SidebarOption>
-
-
-            <SidebarOption optionTitle={"Price"}>
-                <div className="paid__options">
-                    <FormControlLabel
-                        className={"paid__option"}
-                        control={<Checkbox checked={isFree} onChange={handleChangeIsFreeFilter} name="isFree" />}
-                        label="Free"
-                    />
-                    <FormControlLabel
-                        className={"paid__option"}
-                        control={<Checkbox checked={isPaid} onChange={handleChangeIsPaidFilter} name="isPaid" />}
-                        label="Paid"
-                    />
-                </div>
-            </SidebarOption>
+                <SidebarOption optionTitle={"Price"}>
+                    <PaidOptions />
+                </SidebarOption>
+            </SidebarContext.Provider>
         </div>
     );
 };

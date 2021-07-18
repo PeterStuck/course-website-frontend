@@ -8,7 +8,6 @@ import SubcategoriesList from "./SubcategoriesList";
 import '../../../styles/courses/sidebar/Sidebar.scss';
 
 const Sidebar = () => {
-
     return (
         <div className="sidebar_filter_options">
                 <SidebarOption optionTitle={"Subcategory"}>

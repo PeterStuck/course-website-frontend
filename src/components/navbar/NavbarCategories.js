@@ -5,8 +5,8 @@ import {faAngleDown} from "@fortawesome/free-solid-svg-icons";
 
 import NavbarCategory from "./NavbarCategory";
 
-import {getAllMainCategories} from "../../operations/categoryOperations";
-import {clearCategories} from "../../actions/categoryActions";
+import {getAllMainCategories} from "../../operations/navbar/categoryOperations";
+import {clearCategories} from "../../actions/navbar/categoryActions";
 
 import '../../styles/navbar/NavbarCategories.scss';
 

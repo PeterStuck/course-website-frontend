@@ -1,6 +1,6 @@
-import {addCategory} from "../actions/categoryActions";
+import {addCategory} from "../../actions/navbar/categoryActions";
 
-import {CATEGORY_RESOURCE_URLS} from "../resourceUrls";
+import {CATEGORY_RESOURCE_URLS} from "../../resourceUrls";
 
 
 const fetchMainCategories = async () => {

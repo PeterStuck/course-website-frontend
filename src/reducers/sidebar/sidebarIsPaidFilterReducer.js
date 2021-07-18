@@ -1,5 +1,5 @@
 import {updateFilterFlag} from "./sidebarIsFreeFilterReducer";
-import {UPDATE_IS_PAID_FILTER} from "../../actions/sidebarFilters/sidebarIsPaidFilterActions";
+import {UPDATE_IS_PAID_FILTER} from "../../actions/sidebar/sidebarIsPaidFilterActions";
 
 export const sidebarIsPaidFilterReducer = (state = false, action) => {
     const {payload, type} = action;

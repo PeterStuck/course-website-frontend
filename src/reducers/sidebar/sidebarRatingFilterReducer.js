@@ -1,10 +1,10 @@
-import {UPDATE_RATING_FILTER} from "../actions/sidebarFilterActions";
+import {UPDATE_RATING_FILTER} from "../../actions/sidebar/sidebarRatingFilterActions";
 
 const updateFilterValue = (state, payload) => {
     return payload.newValue;
 }
 
-export const sidebarFilterReducer = (state = "", action) => {
+export const sidebarRatingFilterReducer = (state = "", action) => {
     const {payload, type} = action;
 
     switch (type) {

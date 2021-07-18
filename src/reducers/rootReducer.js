@@ -1,16 +1,18 @@
 import {combineReducers} from "redux";
 
-import {categoryReducer} from "./categoryReducer";
-import {subcategoryReducer} from "./subcategoryReducer";
-import {sidebarFilterReducer} from "./sidebarFilterReducer";
-import {sidebarIsFreeFilterReducer} from "./sidebarFilters/sidebarIsFreeFilterReducer";
-import {sidebarIsPaidFilterReducer} from "./sidebarFilters/sidebarIsPaidFilterReducer";
+import {categoryReducer} from "./navbar/categoryReducer";
+import {subcategoryReducer} from "./sidebar/subcategoryReducer";
+import {sidebarRatingFilterReducer} from "./sidebar/sidebarRatingFilterReducer";
+import {sidebarIsFreeFilterReducer} from "./sidebar/sidebarIsFreeFilterReducer";
+import {sidebarIsPaidFilterReducer} from "./sidebar/sidebarIsPaidFilterReducer";
 
 
 export const rootReducer = combineReducers({
     categories: categoryReducer,
     subcategories: subcategoryReducer,
-    sidebarFilters: sidebarFilterReducer,
+
+    /* Sidebar course filters */
+    sidebarRatingFilter: sidebarRatingFilterReducer,
     sidebarIsFreeFilter: sidebarIsFreeFilterReducer,
     sidebarIsPaidFilter: sidebarIsPaidFilterReducer
 })

@@ -1,6 +1,6 @@
-import {CATEGORY_RESOURCE_URLS} from "../resourceUrls";
+import {CATEGORY_RESOURCE_URLS} from "../../resourceUrls";
 
-import {addSubcategory, clearSubcategories} from "../actions/subcategoryActions";
+import {addSubcategory, clearSubcategories} from "../../actions/sidebar/subcategoryActions";
 
 export const getAllSubcategories = (categoryId) =>
     async (dispatch) => {

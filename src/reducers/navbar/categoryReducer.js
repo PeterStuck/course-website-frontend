@@ -1,4 +1,4 @@
-import {ADD_CATEGORY, CLEAR_CATEGORIES} from "../actions/categoryActions";
+import {ADD_CATEGORY, CLEAR_CATEGORIES} from "../../actions/navbar/categoryActions";
 
 const addCategory = (state, payload) => {
     return [...state, payload];

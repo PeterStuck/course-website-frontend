@@ -1,4 +1,4 @@
-import {UPDATE_IS_FREE_FILTER} from "../../actions/sidebarFilters/sidebarIsFreeFilterActions";
+import {UPDATE_IS_FREE_FILTER} from "../../actions/sidebar/sidebarIsFreeFilterActions";
 
 export const updateFilterFlag = (state) => {
     return !state;

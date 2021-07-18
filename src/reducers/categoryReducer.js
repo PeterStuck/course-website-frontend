@@ -4,9 +4,8 @@ const addCategory = (state, payload) => {
     return [...state, payload];
 }
 
-const clearCategories = (state, payload) => {
-    state.length = 0;
-    return state;
+const clearCategories = () => {
+    return [];
 }
 
 export const categoryReducer = (state = [], action) => {

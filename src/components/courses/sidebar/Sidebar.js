@@ -7,12 +7,15 @@ import CategoriesList from "../../generic/CategoriesList";
 import PaidOptions from "./PaidOptions";
 
 import {defaultState, SidebarContext} from "./SidebarContext";
-import {CATEGORY_RESOURCE_URLS} from "../../../resources";
-import '../../../styles/courses/sidebar/Sidebar.scss';
+import {useDispatch, useSelector} from "react-redux";
+import {clearSubcategories} from "../../../actions/subcategoryActions";
 
+import '../../../styles/courses/sidebar/Sidebar.scss';
+import {getAllSubcategories} from "../../../operations/subcategoryOperations";
 
 const Sidebar = () => {
-    const [subcategories, setSubcategories] = useState([]);
+    const subcategories = useSelector(store => store.subcategories);
+    const dispatch = useDispatch();
     const [ratingFilter, setRatingFilter] = useState();
     const [isFree, setIsFree] = useState(defaultState.isFree);
     const [isPaid, setIsPaid] = useState(defaultState.isPaid);
@@ -20,27 +23,9 @@ const Sidebar = () => {
     const {categoryId} = useParams();
 
     useEffect(() => {
-        fetchSubcategoryData();
+        dispatch(clearSubcategories());
+        dispatch(getAllSubcategories(categoryId));
     }, [categoryId])
-
-    const fetchSubcategoryData = () => {
-        const {getSubcategoriesUrl} = CATEGORY_RESOURCE_URLS;
-        fetch(getSubcategoriesUrl + categoryId, {
-            headers: {
-                "Access-Control-Allow-Origin": "*"
-            }
-        })
-            .then(response => {
-                if (response.status === 204) {
-                    setSubcategories([]);
-                    return Promise.reject("No subcategories.");
-                }
-                return response;
-            })
-            .then(response => response.json())
-            .then(data => setSubcategories(data))
-            .catch(error => console.log(error));
-    }
 
     const subcategoryComponent = (
         (subcategories.length > 0) ? <CategoriesList

@@ -1,11 +1,10 @@
 import {addCategory} from "../actions/categoryActions";
 
+import {CATEGORY_RESOURCE_URLS} from "../resourceUrls";
+
 
 const fetchMainCategories = async () => {
-    const response = await fetch("http://localhost:8085/api/categories", {
-        headers: {
-            "Access-Control-Allow-Origin": "*"
-        }});
+    const response = await fetch(CATEGORY_RESOURCE_URLS.getMainCategoriesUrl, { method: 'GET' });
     return await response.json();
 }
 
@@ -14,3 +13,4 @@ export const getAllMainCategories = () =>
         const mainCategories = await fetchMainCategories();
         mainCategories.map(category => dispatch(addCategory(category)));
     }
+

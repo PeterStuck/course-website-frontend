@@ -4,8 +4,15 @@ import {FormControl, FormControlLabel, Radio, RadioGroup} from "@material-ui/cor
 import RatingOptionFilter from "./RatingOptionFilter";
 
 import "../../../styles/courses/sidebar/RatingOptions.scss";
+import {useDispatch, useSelector} from "react-redux";
+import {changeRatingFilter} from "../../../actions/sidebarFilterActions";
 
-const RatingOptions = ({selectedRatingFilter, changeRatingFilterHandler}) => {
+const RatingOptions = () => {
+    const ratingFilter = useSelector(store => store.sidebarFilters);
+    const dispatch = useDispatch();
+
+    const handleChangeRatingFilter = (e) =>
+        dispatch(changeRatingFilter(e.target.value));
 
     const ratingValues = [4.5, 4.0, 3.5, 3.0];
     const ratingComponents = ratingValues
@@ -21,7 +28,7 @@ const RatingOptions = ({selectedRatingFilter, changeRatingFilterHandler}) => {
 
     return (
         <FormControl className={"ratings__fieldset"} component="fieldset">
-            <RadioGroup aria-label="ratingFilter" name="ratingFilter" value={selectedRatingFilter} onChange={changeRatingFilterHandler}>
+            <RadioGroup aria-label="ratingFilter" name="ratingFilter" value={ratingFilter} onChange={handleChangeRatingFilter}>
                 {ratingComponents}
             </RadioGroup>
         </FormControl>

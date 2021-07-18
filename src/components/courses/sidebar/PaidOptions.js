@@ -1,11 +1,18 @@
-import React, {useContext} from 'react';
-
-import {SidebarContext} from "./SidebarContext";
+import React from 'react';
 import CheckboxOption from "../../generic/CheckboxOption";
+import {useDispatch, useSelector} from "react-redux";
+import {changeIsFreeFilter} from "../../../actions/sidebarFilters/sidebarIsFreeFilterActions";
+import {changeIsPaidFilter} from "../../../actions/sidebarFilters/sidebarIsPaidFilterActions";
+
 
 const PaidOptions = () => {
-    const {isFree, handleChangeIsFree} = useContext(SidebarContext);
-    const {isPaid, handleChangeIsPaid} = useContext(SidebarContext);
+    const isFreeFilter = useSelector(store => store.sidebarIsFreeFilterReducer);
+    const isPaidFilter = useSelector(store => store.sidebarIsPaidFilter);
+    const dispatch = useDispatch();
+
+    const handleChangeIsFree = () => dispatch(changeIsFreeFilter());
+
+    const handleChangeIsPaid = () => dispatch(changeIsPaidFilter());
 
     return (
         <div className="paid__options">
@@ -13,14 +20,14 @@ const PaidOptions = () => {
                 className={"paid__option"}
                 label={"Free"}
                 name={"isFree"}
-                state={isFree}
+                state={isFreeFilter}
                 changeHandler={handleChangeIsFree}
             />
             <CheckboxOption
                 className={"paid__option"}
                 label={"Paid"}
                 name={"isPaid"}
-                state={isPaid}
+                state={isPaidFilter}
                 changeHandler={handleChangeIsPaid}
             />
         </div>

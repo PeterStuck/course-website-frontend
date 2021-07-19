@@ -5,7 +5,7 @@ import RatingOptionFilter from "./RatingOptionFilter";
 
 import "../../../styles/courses/sidebar/RatingOptions.scss";
 import {useDispatch, useSelector} from "react-redux";
-import {changeRatingFilter} from "../../../actions/sidebar/sidebarRatingFilterActions";
+import {changeRatingFilter} from "../../../actions/courses/sidebar/sidebarRatingFilterActions";
 
 const RatingOptions = () => {
     const ratingFilter = useSelector(store => store.sidebarFilters);

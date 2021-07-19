@@ -1,15 +1,14 @@
 import React from 'react';
 
-import MainSection from "./MainSection";
-import Sidebar from "./courses/sidebar/Sidebar";
+import MainSection from "../../layout/MainSection";
+import Sidebar from "./sidebar/Sidebar";
+import CoursesContent from "./content/CoursesContent";
 
 const CoursesMainSection = () => {
     return (
         <MainSection sectionClass="section--margin">
             <Sidebar />
-            <div className="content__wrapper">
-
-            </div>
+            <CoursesContent />
         </MainSection>
     );
 };

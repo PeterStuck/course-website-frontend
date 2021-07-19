@@ -1,4 +1,4 @@
-import {UPDATE_RATING_FILTER} from "../../actions/sidebar/sidebarRatingFilterActions";
+import {UPDATE_RATING_FILTER} from "../../../actions/courses/sidebar/sidebarRatingFilterActions";
 
 const updateFilterValue = (state, payload) => {
     return payload.newValue;

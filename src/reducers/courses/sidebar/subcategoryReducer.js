@@ -1,4 +1,4 @@
-import {ADD_SUBCATEGORY, CLEAR_SUBCATEGORIES} from "../../actions/sidebar/subcategoryActions";
+import {ADD_SUBCATEGORY, CLEAR_SUBCATEGORIES} from "../../../actions/courses/sidebar/subcategoryActions";
 
 
 const addSubcategory = (state, payload) => {

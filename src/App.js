@@ -2,7 +2,7 @@ import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import {Provider} from "react-redux";
 
 import Navbar from "./components/navbar/Navbar";
-import CoursesMainSection from "./components/CoursesMainSection";
+import CoursesMainSection from "./components/courses/CoursesMainSection";
 
 import {urls} from './urls';
 import {store} from "./store/store";

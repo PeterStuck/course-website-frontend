@@ -4,8 +4,8 @@ import {useParams} from "react-router-dom";
 
 import CategoriesList from "../../generic/CategoriesList";
 
-import {clearSubcategories} from "../../../actions/sidebar/subcategoryActions";
-import {getAllSubcategories} from "../../../operations/sidebar/subcategoryOperations";
+import {clearSubcategories} from "../../../actions/courses/sidebar/subcategoryActions";
+import {getAllSubcategories} from "../../../operations/courses/sidebar/subcategoryOperations";
 
 const SubcategoriesList = () => {
     const subcategories = useSelector(store => store.subcategories);

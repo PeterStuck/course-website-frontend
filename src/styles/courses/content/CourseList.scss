@@ -1,0 +1,23 @@
+.content__wrapper .courses__list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+
+  &__not_found_info {
+    font-size: 1.25rem;
+    font-weight: 300;
+  }
+
+  & .course {
+    flex-basis: 95%;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 260px 1fr 10%;
+    background-color: #fff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    margin-bottom: 2%;
+    padding-bottom: 2%;
+    max-height: 260px;
+  }
+}

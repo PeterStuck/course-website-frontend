@@ -1,8 +1,19 @@
+@import "../mixins";
+
 header.navbar .navbar {
-  &__logo img {
-    width: 50px;
-    object-fit: contain;
-    display: block;
-    margin: 0 auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+
+  @include media-mixin(small) {
+    &__logo img {
+      width: 40px;
+    }
+  }
+
+  @include media-mixin(medium) {
+    &__logo img {
+      width: 50px;
+    }
   }
 }

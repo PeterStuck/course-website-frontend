@@ -10,47 +10,101 @@ header.navbar {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 
   nav.navbar__menu {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     height: 100%;
     width: 100%;
+  }
+
+  @include media-mixin(small) {
+    nav.navbar__menu {
+      display: grid;
+      grid-template-columns: 10% 1fr 10% 10%;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+  }
+
+  @include media-mixin(large) {
+    nav.navbar__menu {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
   }
 }
 
 header.navbar .navbar__menu .navbar {
-  &__logo, &__categories, &__create_course, &__my_courses, &__account, &__searchbar, &__cart {
-    @include component_center;
-    height: 100%;
-    text-align: center;
-    transition: 0.1s;
+  @include media-mixin(small) {
+    &__searchbar, &__create_course, &__my_courses, &__categories {
+      display: none;
+    }
+
+    &__hamburger {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    &__logo {
+      grid-column: 2;
+      grid-row: 1;
+      width: auto;
+      margin: 0 auto;
+    }
+
+    &__search--mobile {
+      grid-column: 3;
+      grid-row: 1;
+    }
+
+    &__cart {
+      grid-column: 4;
+      grid-row: 1;
+      margin: 5px;
+      font-size: 1.5rem;
+    }
   }
 
-  &__logo, &__categories, &__create_course, &__my_courses, &__account {
-    flex-basis: 10%;
-  }
+  @include media-mixin(large) {
+    &__logo, &__categories, &__create_course, &__my_courses, &__account, &__searchbar, &__cart {
+      @include component_center;
+      height: 100%;
+      text-align: center;
+      transition: 0.1s;
+    }
 
-  &__searchbar {
-    flex-grow: 1;
-  }
+    &__searchbar, &__create_course, &__my_courses, &__categories {
+      margin: 0 1%;
+    }
 
-  &__categories {
-    position: relative;
-    cursor: default;
-    transition: 0.1s;
-  }
+    &__logo, &__categories, &__create_course, &__my_courses, &__account {
+      flex-basis: 10%;
+    }
 
-  &__create_course, &__my_courses {
-    padding: 0 10px;
-  }
+    &__searchbar {
+      flex-grow: 1;
+    }
 
-  &__create_course {
-    margin-left: 20px;
-  }
+    &__categories {
+      position: relative;
+      cursor: default;
+      transition: 0.1s;
+    }
 
-  &__cart {
-    flex-basis: 5%;
-    font-size: 1.75rem;
+    &__create_course, &__my_courses {
+      padding: 0 10px;
+    }
+
+    &__create_course {
+      margin-left: 20px;
+    }
+
+    &__cart {
+      flex-basis: 5%;
+    }
+
+    &__hamburger {
+      display: none;
+    }
   }
 
   &__categories span:hover, &__cart:hover, &__create_course:hover, &__my_courses:hover {

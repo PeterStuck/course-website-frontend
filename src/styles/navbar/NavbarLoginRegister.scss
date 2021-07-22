@@ -1,29 +1,39 @@
+@import "../mixins";
+
 .navbar {
   &__login_register {
-    flex-basis: 20%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    height: 100%;
+    @include media-mixin(small) {
+      display: none;
+    }
+
+    @include media-mixin(large) {
+      flex-basis: 20%;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      height: 100%;
+    }
   }
 
-  &__login, &__register {
-    padding: 2% 8%;
-    cursor: pointer;
-    transition: 0.3s;
-  }
+  @include media-mixin(large) {
+    &__login, &__register {
+      padding: 2% 8%;
+      cursor: pointer;
+      transition: 0.3s;
+    }
 
-  &__register {
-    background-color: black;
-    color: white;
-  }
+    &__register {
+      background-color: black;
+      color: white;
+    }
 
-  &__login {
-    border: 1px solid black;
-    transition: 0.1s;
-  }
+    &__login {
+      border: 1px solid black;
+      transition: 0.1s;
+    }
 
-  &__login:hover {
-    background-color: #f5f5f5;
+    &__login:hover {
+      background-color: #f5f5f5;
+    }
   }
 }

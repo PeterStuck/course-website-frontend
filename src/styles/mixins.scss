@@ -1,5 +1,23 @@
+@import 'breakpoints';
+
 @mixin component_center {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@function min-width-for($key) {
+  $width: map-get($breakpoints, $key);
+  @return 'min-width: #{$width}';
+}
+
+@mixin media-mixin($breakpointKey) {
+  $size: min-width-for($breakpointKey);
+  @if ($size) {
+    @media (#{$size}) {
+      @content;
+    }
+  } @else {
+    @error 'Breakpoint key "#{$breakpointKey}" not exists.'
+  }
 }

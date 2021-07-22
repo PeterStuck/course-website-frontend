@@ -3,6 +3,7 @@ import React from 'react';
 import {NavLink} from "react-router-dom";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faShoppingCart} from '@fortawesome/free-solid-svg-icons'
+import MenuIcon from '@material-ui/icons/Menu';
 
 import {urls} from '../../urls';
 import '../../styles/navbar/Navbar.scss';
@@ -12,17 +13,23 @@ import NavbarLogo from "./NavbarLogo";
 import NavbarSearchbar from "./NavbarSearchbar";
 import NavbarLoginRegister from "./NavbarLoginRegister";
 import NavbarLinkTile from "./NavbarLinkTile";
+import NavbarSearchMobile from "./NavbarSearchMobile";
 
 const Navbar = () => {
 
     return (
         <header className="navbar">
             <nav className="navbar__menu">
+                {/* Placeholder */}
+                <div className="navbar__hamburger">
+                    <MenuIcon />
+                </div>
                 <NavbarLogo />
 
                 <NavbarCategories />
 
                 <NavbarSearchbar />
+                <NavbarSearchMobile />
 
                 <NavbarLinkTile
                     path={urls.CREATE_COURSE_PAGE.path}

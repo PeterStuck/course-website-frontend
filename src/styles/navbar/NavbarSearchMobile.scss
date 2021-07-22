@@ -1,0 +1,49 @@
+@import "../mixins";
+
+.navbar__search--mobile {
+  @include media-mixin(small) {
+    display: block;
+    text-align: center;
+  }
+
+  @include media-mixin(large) {
+    display: none;
+  }
+}
+
+.search__panel {
+  &__content {
+    height: 100vh;
+    width: 100vw;
+  }
+
+  & .panel__content {
+    &__wrapper form {
+      @include component_center;
+      flex-wrap: wrap;
+      margin-top: 5px;
+    }
+  }
+}
+
+.search__panel .panel__content {
+  &__searchbar {
+    flex-grow: 1;
+    & .MuiTextField-root {
+      width: 100%;
+      padding: 10px;
+      font-family: 'Poppins', sans-serif !important;
+    }
+  }
+
+  &__close, &__search_icon {
+    flex-basis: 10%;
+    text-align: center;
+  }
+
+  &__search_icon button {
+    border: none;
+    background-color: transparent;
+    text-align: center;
+  }
+}

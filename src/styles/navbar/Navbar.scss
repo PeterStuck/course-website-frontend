@@ -1,13 +1,16 @@
 @import "../variables";
 @import "../mixins";
 
-@import "NavbarHamburgerMenu";
 @import "NavbarLogo";
-@import "NavbarSearchMobile";
-@import "NavbarCategories";
 @import "NavbarCategory";
 @import "NavbarLoginRegister";
-@import "NavbarSearchbar";
+
+@import "desktop/NavbarCategories";
+@import "desktop/NavbarSearchbar";
+
+@import "mobile/NavbarHamburgerMenu";
+@import "mobile/NavbarSearch";
+@import "mobile/SideMenuSection";
 
 header.navbar {
   width: 100%;
@@ -23,20 +26,30 @@ header.navbar {
   }
 
   @include media-mixin(small) {
-    nav.navbar__menu {
+    nav.navbar__menu .navbar__menu--mobile {
       display: grid;
       grid-template-columns: 10% 1fr 10% 10%;
       justify-content: center;
       align-items: center;
+      height: 100%;
       text-align: center;
+    }
+
+    nav.navbar__menu .navbar__menu--desktop {
+      display: none;
     }
   }
 
   @include media-mixin(large) {
-    nav.navbar__menu {
+    nav.navbar__menu .navbar__menu--desktop {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      height: 100%;
+    }
+
+    nav.navbar__menu .navbar__menu--mobile {
+      display: none;
     }
   }
 }

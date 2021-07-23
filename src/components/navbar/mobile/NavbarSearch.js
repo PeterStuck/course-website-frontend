@@ -5,7 +5,7 @@ import {faSearch} from '@fortawesome/free-solid-svg-icons'
 import {Drawer, TextField} from "@material-ui/core";
 import CloseIcon from '@material-ui/icons/Close';
 
-const NavbarSearchMobile = () => {
+const NavbarSearch = () => {
     const [show, setShow] = useState(false);
 
     const handleShow = () => setShow(!show);
@@ -42,4 +42,4 @@ const NavbarSearchMobile = () => {
     );
 };
 
-export default NavbarSearchMobile;
+export default NavbarSearch;

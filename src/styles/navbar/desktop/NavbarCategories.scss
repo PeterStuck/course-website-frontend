@@ -1,6 +1,3 @@
-@import "../variables";
-@import "../mixins";
-
 @include media-mixin(large) {
   .navbar__categories .categories__content {
     display: none;

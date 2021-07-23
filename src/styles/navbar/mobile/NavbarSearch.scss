@@ -1,5 +1,3 @@
-@import "../mixins";
-
 .navbar__search--mobile {
   @include media-mixin(small) {
     display: block;

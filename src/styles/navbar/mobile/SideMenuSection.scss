@@ -1,21 +1,7 @@
-@import '../mixins';
-@import '../variables';
-
-.side_menu__wrapper {
-  @include media-mixin(small) {
-    width: 50vw;
-  }
-
-  @include media-mixin(medium) {
-    width: 40vw
-  }
-}
-
 .side_menu__wrapper .side_menu {
   &__account {
     min-height: 10vh;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.05);
   }
 
   &__section {

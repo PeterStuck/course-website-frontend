@@ -1,13 +1,16 @@
 import React, {useEffect, useState} from 'react';
 import {useLocation} from "react-router";
+
 import MenuIcon from "@material-ui/icons/Menu";
+import CloseIcon from '@material-ui/icons/Close';
 import {Drawer} from "@material-ui/core";
 
-import MainCategories from "./MainCategories";
-import SideMenuSection from "./mobile/SideMenuSection";
-import NavbarLinkTile from "./NavbarLinkTile";
+import MainCategories from "../MainCategories";
+import SideMenuSection from "./SideMenuSection";
+import NavbarLinkTile from "../NavbarLinkTile";
 
-import {urls} from "../../urls";
+import {urls} from "../../../urls";
+import NavbarLoginRegister from "../NavbarLoginRegister";
 
 const NavbarHamburgerMenu = () => {
     const [show, setShow] = useState(false);
@@ -26,7 +29,11 @@ const NavbarHamburgerMenu = () => {
             <MenuIcon onClick={toggleShow} />
             <Drawer className={'side_menu'} anchor={'left'} open={show} onClose={toggleShow}>
                 <div className="side_menu__wrapper">
-                    <div className="side_menu__account"></div>
+                    <SideMenuSection>
+                        <div className="side_menu__account">
+                            <NavbarLoginRegister />
+                        </div>
+                    </SideMenuSection>
 
                     <SideMenuSection>
                         <NavbarLinkTile
@@ -51,6 +58,10 @@ const NavbarHamburgerMenu = () => {
                     </SideMenuSection>
                 </div>
             </Drawer>
+
+            <div className="side_menu__close" hidden={!show} onClick={closeSideMenu}>
+                <CloseIcon />
+            </div>
         </div>
     );
 };

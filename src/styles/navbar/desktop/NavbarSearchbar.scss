@@ -1,5 +1,3 @@
-@import "../mixins";
-
 @include media-mixin(large) {
   header.navbar .navbar__searchbar {
     margin: 0 5px;

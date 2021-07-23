@@ -1,7 +1,5 @@
 import React from 'react';
 
-import '../../styles/navbar/NavbarLoginRegister.scss';
-
 const NavbarLoginRegister = () => {
     return (
         <div className="navbar__login_register">

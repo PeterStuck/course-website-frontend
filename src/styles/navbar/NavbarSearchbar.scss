@@ -1,36 +1,38 @@
 @import "../mixins";
 
-header.navbar .navbar__searchbar {
-  margin: 0 5px;
-}
-
-.navbar__searchbar form {
-  width: 100%;
-}
-
-.navbar__searchbar form .searchbar__input__wrapper {
-  @include component_center;
-  padding: 5px 0;
-  background-color: #fff;
-  border: 1px solid black;
-  border-radius: .25rem;
-  width: 100%;
-
-  & input {
-    flex-grow: 1;
-    border: none;
-    box-shadow: 0 0 0 0 white;
-    font-size: 1rem;
-    font-weight: 300;
+@include media-mixin(large) {
+  header.navbar .navbar__searchbar {
+    margin: 0 5px;
   }
 
-  & button[type=submit] {
-    flex-basis: 10%;
-    height: 100%;
-    display: block;
-    border: none;
-    padding: .375rem .75rem;
-    font-size: 1rem;
+  .navbar__searchbar form {
+    width: 100%;
+  }
+
+  .navbar__searchbar form .searchbar__input__wrapper {
+    @include component_center;
+    padding: 5px 0;
     background-color: #fff;
+    border: 1px solid black;
+    border-radius: .25rem;
+    width: 100%;
+
+    & input {
+      flex-grow: 1;
+      border: none;
+      box-shadow: 0 0 0 0 white;
+      font-size: 1rem;
+      font-weight: 300;
+    }
+
+    & button[type=submit] {
+      flex-basis: 10%;
+      height: 100%;
+      display: block;
+      border: none;
+      padding: .375rem .75rem;
+      font-size: 1rem;
+      background-color: #fff;
+    }
   }
 }

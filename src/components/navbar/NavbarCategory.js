@@ -4,7 +4,6 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faAngleRight} from "@fortawesome/free-solid-svg-icons";
 
 import {urls} from "../../urls";
-import '../../styles/navbar/NavbarCategory.scss';
 
 import {Link} from "react-router-dom";
 

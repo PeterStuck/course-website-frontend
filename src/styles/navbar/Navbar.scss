@@ -1,6 +1,14 @@
 @import "../variables";
 @import "../mixins";
 
+@import "NavbarHamburgerMenu";
+@import "NavbarLogo";
+@import "NavbarSearchMobile";
+@import "NavbarCategories";
+@import "NavbarCategory";
+@import "NavbarLoginRegister";
+@import "NavbarSearchbar";
+
 header.navbar {
   width: 100%;
   height: 10vh;

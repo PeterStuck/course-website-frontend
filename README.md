@@ -1,11 +1,11 @@
-## In deployment process...
+## In development process...
 
 ### Technologies and libraries
 - React
-- react-router-dom
-- redux (+ redux-thunk)
-- axios
+- React-router-dom
+- Redux (+ redux-thunk)
+- Axios
 - react-number-format
-- bootstrap
-- material-ui
-- sass
+- Bootstrap
+- Material-ui
+- Sass

@@ -8,17 +8,17 @@ import SubcategoriesList from "./SubcategoriesList";
 const Sidebar = () => {
     return (
         <div className="sidebar_filter_options">
-                <SidebarOption optionTitle={"Subcategory"}>
-                    <SubcategoriesList />
-                </SidebarOption>
+            <SidebarOption optionTitle={"Subcategory"}>
+                <SubcategoriesList />
+            </SidebarOption>
 
-                <SidebarOption optionTitle={"Ratings"}>
-                    <RatingOptions />
-                </SidebarOption>
+            <SidebarOption optionTitle={"Ratings"}>
+                <RatingOptions />
+            </SidebarOption>
 
-                <SidebarOption optionTitle={"Price"}>
-                    <PaidOptions />
-                </SidebarOption>
+            <SidebarOption optionTitle={"Price"}>
+                <PaidOptions />
+            </SidebarOption>
         </div>
     );
 };

@@ -1,29 +1,42 @@
 .sidebar_filter_options .option__rating {
-  display: grid;
-  grid-template-columns: 1fr 20% 20%;
-  align-items: center;
+  @include media-mixin(small) {
+    display: grid;
+    grid-template-columns: 100px 30px 30px;
+    align-items: center;
 
-  & .rating {
+    & .rating {
+      &__stars {
+        grid-row: 1;
+        grid-column: 1;
+        color: $star-color;
+      }
 
-    &__stars {
-      grid-row: 1;
-      grid-column: 1;
-      color: #FFD523;
+      &__stars_count {
+        grid-row: 1;
+        grid-column: 2;
+        font-size: 1rem;
+        text-align: center;
+        font-family: 'Poppins', sans-serif;
+      }
+
+      &__up_icon {
+        grid-row: 1;
+        grid-column: 3;
+        margin: 0 auto;
+      }
     }
+  }
 
-    &__stars_count {
-      grid-row: 1;
-      grid-column: 2;
-      text-align: center;
-      font-size: .85rem;
-      font-family: 'Poppins', sans-serif;
+  @include media-mixin(large) {
+    & .rating {
+      &__stars_count {
+        font-size: .85rem;
+      }
+
+      &__up_icon {
+        margin: 0;
+      }
     }
-
-    &__up_icon {
-      grid-row: 1;
-      grid-column: 3;
-    }
-
   }
 }
 

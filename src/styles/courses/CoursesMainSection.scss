@@ -1,8 +1,13 @@
-@import "content/CourseContent";
-@import "content/CourseList";
-@import "content/Course";
+section.section--margin div.section__wrapper {
+  display: grid;
+  margin-top: 5%;
 
-@import "sidebar/Sidebar";
-@import "sidebar/SidebarOption";
-@import "sidebar/RatingOptions";
-@import "sidebar/RatingOptionFilter";
+  @include media-mixin(small) {
+    grid-template-columns: 1fr;
+    width: 80%;
+  }
+
+  @include media-mixin(large) {
+    grid-template-columns: 20% 1fr;
+  }
+}

@@ -53,6 +53,7 @@
     &__price {
       grid-row: 6;
       grid-column: 2;
+      text-align: right;
     }
   }
 
@@ -82,6 +83,7 @@
     &__price {
       grid-row: 1;
       grid-column: 3;
+      text-align: center;
     }
   }
 
@@ -116,7 +118,6 @@
   }
 
   &__price {
-    text-align: center;
     font-weight: 600;
   }
 }

@@ -1,13 +1,29 @@
 .sidebar_filter_options .sidebar__option {
-  margin-bottom: 5px;
+  @include media-mixin(small) {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 
-  & .option__title {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 500;
+    & .option__title {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 500;
+    }
+
+    & .option__body {
+      font-size: 1rem;
+      font-family: 'Poppins', sans-serif;
+    }
   }
 
-  & .option__body {
-    font-size: 0.85rem;
-    font-family: 'Poppins', sans-serif;
+  @include media-mixin(large) {
+    margin-bottom: 5px;
+
+    & .option__title {
+      font-size: 1rem;
+    }
+
+    & .option__body {
+      font-size: 0.85rem;
+    }
   }
+
 }

@@ -1,6 +1,3 @@
-@import "src/styles/variables";
-@import "src/styles/mixins";
-
 section {
   width: 100%;
   max-width: 100vw;
@@ -8,31 +5,7 @@ section {
 }
 
 section.section--margin div.section__wrapper {
-  display: grid;
   margin: 0 auto;
   min-height: 80vh;
   width: 75%;
-
-  @include media-mixin(small) {
-    grid-template-columns: 1fr;
-    width: 80%;
-  }
-
-  @include media-mixin(large) {
-    grid-template-columns: 20% 1fr;
-  }
-}
-
-div.section__wrapper .content__wrapper {
-  min-height: 80vh;
-
-  @include media-mixin(small) {
-    grid-column: 1;
-    grid-row: 1;
-  }
-
-  @include media-mixin(large) {
-    grid-column: 2;
-    grid-row: 1;
-  }
 }

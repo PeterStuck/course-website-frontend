@@ -1,4 +1,14 @@
-.content__wrapper {
+div.section__wrapper .content__wrapper {
+  min-height: 80vh;
   width: 100%;
-  margin-top: 5%;
+
+  @include media-mixin(small) {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  @include media-mixin(large) {
+    grid-column: 2;
+    grid-row: 1;
+  }
 }

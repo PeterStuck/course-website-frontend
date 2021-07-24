@@ -1,0 +1,64 @@
+div.section__wrapper .courses__filter {
+  @include media-mixin(small) {
+    grid-column: 1;
+    grid-row: 1;
+    padding: 5px;
+    cursor: pointer;
+  }
+
+  @include media-mixin(large) {
+    display: none;
+  }
+}
+
+div.section__wrapper .courses__filter .filter {
+  @include media-mixin(small) {
+    &__icon {
+      padding: 5px;
+    }
+
+    &__icon__text {
+      margin: 0 5px;
+    }
+  }
+}
+
+.filter__sidebar .filter__sidebar__content {
+  @include component_center;
+  flex-wrap: wrap;
+  width: 100vw;
+
+  @include media-mixin(small) {
+    & .sidebar_filter_options {
+      flex-basis: 100%;
+      margin-bottom: 20vh;
+    }
+
+    & .filter__sidebar__confirm__wrapper {
+      @include component_center;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      height: 15vh;
+      background-color: #fff;
+      box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.10);
+    }
+
+    & .filter__sidebar__confirm {
+      padding: 5% 0;
+      background-color: #000;
+      color: white;
+      width: 70%;
+      text-align: center;
+      font-weight: 500;
+      cursor: pointer;
+    }
+  }
+
+  @include media-mixin(medium) {
+    & .filter__sidebar__confirm {
+      padding: 2% 0;
+      width: 50%;
+    }
+  }
+}

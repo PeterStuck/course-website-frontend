@@ -3,8 +3,7 @@ import NumberFormat from 'react-number-format';
 
 import {drawStars} from "../starDrawer";
 
-import courseImgPlaceholder from "../../../assets/course-img-placeholder.png";
-import '../../../styles/courses/content/Course.scss';
+import courseImgPlaceholder from "../../../assets/course-img-placeholder.jpg";
 
 const Course = ({courseFeedback, courseDescription, authors, lastUpdate, price, title}) => {
 

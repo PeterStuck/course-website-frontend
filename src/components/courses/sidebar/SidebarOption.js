@@ -2,8 +2,6 @@ import React from 'react';
 import {Accordion, AccordionDetails, AccordionSummary, Typography} from "@material-ui/core";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
-import '../../../styles/courses/sidebar/SidebarOption.scss';
-
 const SidebarOption = ({optionTitle, children}) => {
     return (
         <div className="sidebar__option">

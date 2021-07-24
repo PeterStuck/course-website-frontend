@@ -1,10 +1,9 @@
 import React from 'react';
+
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faAngleUp} from "@fortawesome/free-solid-svg-icons";
 
 import {drawStars} from "../starDrawer";
-
-import "../../../styles/courses/sidebar/RatingOptionFilter.scss";
 
 
 const RatingOptionFilter = ({starCount}) => {

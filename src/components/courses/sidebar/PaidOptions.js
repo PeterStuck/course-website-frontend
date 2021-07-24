@@ -1,6 +1,8 @@
 import React from 'react';
-import CheckboxOption from "../../generic/CheckboxOption";
 import {useDispatch, useSelector} from "react-redux";
+
+import CheckboxOption from "../../generic/CheckboxOption";
+
 import {changeIsFreeFilter} from "../../../actions/courses/sidebar/sidebarIsFreeFilterActions";
 import {changeIsPaidFilter} from "../../../actions/courses/sidebar/sidebarIsPaidFilterActions";
 

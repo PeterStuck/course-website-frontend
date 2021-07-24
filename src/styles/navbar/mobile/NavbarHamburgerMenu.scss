@@ -1,24 +1,30 @@
 .side_menu__wrapper {
   @include media-mixin(small) {
-    width: 50vw;
+    width: 60vw;
   }
 
   @include media-mixin(medium) {
-    width: 40vw
+    width: 50vw
   }
 }
 
 .side_menu {
-  @include media-mixin(small) {
-    &__close {
-      position: absolute;
-      top: 25%;
+  &__close {
+    position: absolute;
+    top: 25%;
+    z-index: 9999;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+
+    @include media-mixin(small) {
+      left: 70%;
+      padding: 4%;
+    }
+
+    @include media-mixin(medium) {
       left: 60%;
-      z-index: 9999;
       padding: 2%;
-      border-radius: 50%;
-      background-color: #fff;
-      box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
     }
   }
 }

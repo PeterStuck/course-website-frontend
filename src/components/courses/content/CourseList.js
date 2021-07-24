@@ -6,7 +6,6 @@ import Course from "./Course";
 
 import {removeAllCourses} from "../../../actions/courses/content/courseActions";
 import {getCoursesByCategoryId} from "../../../operations/courses/content/courseOperations";
-import '../../../styles/courses/content/CourseList.scss';
 
 const CourseList = () => {
     const {categoryId} = useParams();

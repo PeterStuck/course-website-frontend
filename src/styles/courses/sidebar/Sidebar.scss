@@ -1,15 +1,23 @@
-@import "../../variables";
-
-div.section__wrapper .sidebar_filter_options {
-  grid-column: 1;
-  grid-row: 1;
-  margin-top: 20%;
-
-  & .paid__options {
-    display: flex;
-    flex-wrap: wrap;
+@include media-mixin(small) {
+  div.section__wrapper .sidebar_filter_options {
+    display: none;
   }
 }
+
+@include media-mixin(large) {
+  div.section__wrapper .sidebar_filter_options {
+    display: block;
+    grid-column: 1;
+    grid-row: 1;
+    margin-top: 20%;
+
+    & .paid__options {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+}
+
 
 div.section__wrapper .sidebar_filter_options .paid__options {
   & .paid__option {

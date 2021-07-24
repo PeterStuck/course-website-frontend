@@ -1,10 +1,9 @@
 import React from 'react';
+import {useDispatch, useSelector} from "react-redux";
 import {FormControl, FormControlLabel, Radio, RadioGroup} from "@material-ui/core";
 
 import RatingOptionFilter from "./RatingOptionFilter";
 
-import "../../../styles/courses/sidebar/RatingOptions.scss";
-import {useDispatch, useSelector} from "react-redux";
 import {changeRatingFilter} from "../../../actions/courses/sidebar/sidebarRatingFilterActions";
 
 const RatingOptions = () => {

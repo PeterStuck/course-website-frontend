@@ -8,6 +8,7 @@ import {urls} from './urls';
 import {store} from "./store/store";
 
 import './App.scss';
+import './styles/base.scss';
 
 const App = () => {
   return (
